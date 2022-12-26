@@ -40,6 +40,8 @@ public class Collision {
     	switch(fruit) {
     	case "fraise":
         	return Snake.head.getX() == Snake.pickup.getX() && Snake.head.getY() == Snake.pickup.getY();
+    	case "bois":
+    		return Snake.head.getX() == Snake.bois.getX() && Snake.head.getY() == Snake.bois.getY();
         default:
         	return false;
     	}
@@ -52,7 +54,7 @@ public class Collision {
     
     public static void collideBois() {		
        
-    	if (Snake.head.getX() == Snake.bois.getX() && Snake.head.getY() == Snake.bois.getY()) {
+    	if (hasCollide("bois")) {
         	System.out.println("COLLISION FAITE AVEC LE BOIS");
         	
         	Snake.head.setY(Snake.head.getY()+1);
